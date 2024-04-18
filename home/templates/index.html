@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Document</title>
+    <style>
+        table,th,td{
+        border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1> this is is django template</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quasi praesentium facere fugiat veritatis illo, quidem saepe maxime amet nam non natus error tenetur accusamus repellat cum delectus! Facere magni, beatae sequi architecto amet atque pariatur consectetur consequatur enim nobis! Explicabo praesentium dolorem adipisci omnis cum voluptate nesciunt iste molestias.</h2>
+    <table>
+        <tr>
+          <th>SR NO.</th>
+          <th>name</th>
+          <th>age</th>
+          <th>can vote</th>
+        </tr>
+        {% for pep in people%}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{pep.name}}</td>
+          <td>{{pep.age}}</td>
+          <td {%if pep.age >= 18 %} style = "background : red" {% endif %}
+            >
+            {%if pep.age >= 18 %}👍{%else%} 👎
+            {% endif %}
+
+          
+        </tr>
+        {% endfor %}
+      
+      </table>
+
+      <h1>this is index page</h1>
+
+      <a href="/about/">go to about page</a>
+      <a href="/contact/">go to contact page</a>
+      
+</body>
+</html>
